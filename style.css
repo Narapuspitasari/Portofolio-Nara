@@ -1,0 +1,706 @@
+root {
+  --primary-color: #00d9ff;
+  --secondary-color: #ff4d6d;
+  --background-color: #1e1e2f;
+  --text-color: #ffffff;
+}
+
+
+/* ===== Font Poppins ===== */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+</style>
+* {
+ 
+  box-sizing: border-box;
+  font-family: "Zen Dots", sans-serif;
+   
+}
+/* ===== Body ===== */
+body {
+  color: #fff;
+  line-height: 1.6;
+  padding-top: 70px;
+  background: #000;
+  font-family: "Zen Dots", sans-serif;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.logo h4 {
+  font-size: 1.6rem;
+  color: white;
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d9ff;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Animation to 'X' */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile Nav Menu */
+nav.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 65px;
+  right: 20px;
+  width: 200px;
+
+  background: rgba(0, 0, 0, 0.65);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+
+  animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HERO SECTION ===== */
+.container-head {
+  background: #111010;
+  padding: 100px 50px 80px;
+}
+
+.hero-wrapper {
+  margin-top: 40px;
+}
+
+.container-head h1 {
+  font-size: 4rem;
+  color: white;
+}
+
+.container-head h1 span {
+  color: #00d9ff;
+}
+
+.container-head h2 {
+  font-size: 1.3rem;
+  color: #cfcfcf;
+  margin-bottom: 25px;
+}
+
+.container-head p {
+  color: #dcdcdc;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  max-width: 430px;
+}
+
+/* ===== Buttons ===== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 22px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-family: "Zen Dots", sans-serif;
+  text-decoration: none;
+  border: 1px solid #fff;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  color: white;
+}
+
+.btn-primary:hover {
+  background: white;
+  color: black;
+}
+
+.btn-secondary {
+  color: #00d9ff;
+  border-color: #00d9ff;
+}
+
+.btn-secondary:hover {
+  background: #00d9ff;
+  color: black;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav-links */
+  .nav-links {
+    display: none;
+  }
+
+  .profile-img {
+    max-width: 300px;
+    margin-top: 40px;
+  }
+}
+
+
+/* ===== About Section ===== */
+/* ===== About Section ===== */
+#about {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 80px 40px;
+  color: #000000ff;
+  background: white;
+}
+
+#about img {
+  width: 450px;
+  max-width: 100%;
+}
+
+#about h2 {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 0.7rem;
+  line-height: 1.8;
+  font-family: "Zen Dots", sans-serif;
+  color: #000000ff;
+}
+
+.card-about {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  margin-top: 20px;
+  font-family: "Zen Dots", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  border: 1px solid #000000e8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #about {
+    padding: 60px 20px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+  }
+
+  .card-about {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Skills Section ===== */
+#skills {
+  text-align: center;
+  padding: 60px 20px;
+  background: black;
+}
+
+#skills h1 {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#skills p {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 0.8rem;
+  margin-bottom: 40px;
+  color: #bbbbbb;
+}
+
+#skills h3 {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  color: white;
+}
+
+/* Hard Skills Grid */
+.hard-skill1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Hard Skill Card */
+.skill-card {
+  background: rgba(255, 255, 255, 1);
+  padding: 20px 40px;
+  font-family: "Zen Dots", sans-serif;
+  font-size: 1rem;
+  color: black;
+  /* border-radius: 10px; */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+/* Soft Skill Grid */
+.soft-skill2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Soft Skill Card */
+.soft-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px 35px;
+  font-family: "Zen Dots", sans-serif;
+  font-size: 1rem;
+  color: white;
+  /* border-radius: 10px; */
+  border: 1px solid #ffffff70;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 10px 25px rgba(255,255,255,0.15); */
+}
+
+
+
+/* ===== Projects Section ===== */
+
+/* HIDE SECTIONS */
+.project-grid-uiux,
+.project-grid-website {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* SHOW ACTIVE */
+.show {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1 !important;
+}
+
+/* ACTIVE BUTTON */
+.btn-project.active {
+  background: black;
+  color: white;
+}
+
+#projects {
+  padding: 80px 40px;
+  background: black;
+  text-align: center;
+  background: white;
+}
+
+#projects h2 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: black;
+  font-family: "Zen Dots", sans-serif;
+  padding-bottom: 20px;
+
+}
+
+#projects p {
+  margin-bottom: 40px;
+  color: #000000ff;
+  font-family: "Zen Dots", sans-serif;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* BUTTON SWITCH */
+.switch-project {
+  margin-bottom: 30px;
+}
+
+.btn-project {
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-family: "Zen Dots", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-project:hover {
+  background: black;
+  color: white;
+}
+
+/* GRID */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px;
+  width: 280px;
+  transition: 0.3s ease;
+  border: 1px solid #00000055;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h5 {
+  color: black;
+  font-family: "Zen Dots", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: 1px solid black;
+  background: transparent;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Zen Dots", sans-serif;
+}
+
+.card button:hover {
+  background: white;
+  color: black;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  /* box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2); */
+}
+
+
+/* ===== Certificates Section ===== */
+#certificate {
+  background: black;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+#certificate h2 {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+#certificate p {
+  font-family: "Zen Dots", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 60px;
+  color: #bbbbbb;
+}
+
+/* Grid Layout */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Certificate Card */
+.card-certif {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  border: 1px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 260px;
+}
+
+.card-certif img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+}
+
+.card-certif p {
+  margin-top: 5px;
+  color: white;
+  font-family: "Zen Dots", sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Hover Effects */
+.card-certif:hover img {
+  transform: scale(1.1);
+}
+
+.card-certif:hover {
+  transform: translateY(-8px);
+  /* box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2); */
+}
+
+/* ===== Contact Section ===== *//* ===== CONTACT SECTION ===== */
+
+#contact {
+  background: #ffffff;
+  padding: 80px 40px;
+  text-align: center;
+  font-family: "Zen Dots", sans-serif;
+}
+
+#contact h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  color: black;
+}
+
+/* Garis bawah judul */
+#contact h2::after {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background: black;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 100px;
+}
+
+/* LOCATION — LEFT SIDE */
+.contact-info {
+  font-size: 0.9rem;
+  text-align: left;
+  line-height: 1.5;
+  color: black;
+}
+
+/* FORM — RIGHT SIDE */
+.contact-form {
+  width: 380px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+  margin-bottom: 25px;
+  font-family: inherit;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* SUBMIT BUTTON */
+.contact-form button {
+  padding: 8px 30px;
+  background: transparent;
+  border: 1px solid black;
+  font-family: "Zen Dots", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: black;
+  color: white;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+footer {
+  background: white;
+  border-top: 1px solid black;
+  padding: 50px 40px 20px;
+  font-family: "Zen Dots", sans-serif;
+  color: black;
+}
+
+/* GRID LAYOUT */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* COLUMN TITLES */
+footer h3, footer h4 {
+  margin-bottom: 15px;
+}
+
+/* LINKS */
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: gray;
+}
+
+/* BOTTOM COPYRIGHT */
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid black;
+  font-size: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+

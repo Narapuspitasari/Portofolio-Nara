@@ -1,0 +1,30 @@
+<div id="loading">Loading...</div>
+<div id="container"></div>
+
+<script>
+const container = document.getElementById("container");
+const loading = document.getElementById("loading");
+
+async function loadData() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if (!res.ok) throw new Error("Gagal mengambil data");
+
+    const data = await res.json();
+    loading.style.display = "none";
+
+    data.slice(0,10).forEach(post => {
+      container.innerHTML += `
+        <div class="card">
+          <h3>${post.title}</h3>
+          <p>${post.body}</p>
+        </div>`;
+    });
+
+  } catch (error) {
+    loading.innerText = "Error: " + error.message;
+  }
+}
+
+loadData();
+</script>

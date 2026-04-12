@@ -1,0 +1,14 @@
+<form id="formKontak">
+  <input type="text" id="nama" placeholder="Nama" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="pesan" required></textarea>
+  <button type="submit">Kirim</button>
+</form>
+
+<script>
+document.getElementById("formKontak").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Form terkirim!");
+});
+</script>
+

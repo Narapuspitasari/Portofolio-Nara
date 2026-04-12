@@ -1,0 +1,13 @@
+/* nav a { margin: 0 10px; }/ */
+
+.hero {
+  padding: 80px;
+  text-align: center;
+}
+
+/* GRID PRODUK */
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
